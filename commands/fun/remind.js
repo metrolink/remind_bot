@@ -8,8 +8,13 @@ module.exports = { data : new SlashCommandBuilder()
 			.setDescription('The input to echo back')
 			.setRequired(true)),
     async execute(interaction) {
-        const member = interaction.option.getMember('target');
-        await interaction.reply({content: `hello you sent message to ${member.user.username}`, ephmeral:true });
+        const user = interaction.options.getUser('target');
+            interaction.client.users.send(user,'reset router, check vpn, kick people from internet, put cat outside, lock door, prepare tea, check gametime');
+            await interaction.reply({ content: 'you sent a message!', ephemeral: true })
+        //await interaction.reply('this is a test')
 
     },
 }
+
+
+/**/
