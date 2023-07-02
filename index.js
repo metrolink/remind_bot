@@ -26,7 +26,6 @@ for (const folder of commandFolders) {
 }
 
 // Create a new client instance
-
 client.on(Events.InteractionCreate, interaction => {
 	console.log(interaction);
 });
@@ -40,6 +39,12 @@ client.on(Events.InteractionCreate, async interaction => {
 		console.error(`No command matching ${interaction.commandName} was found.`);
 		return;
 	}
+
+    /*if (interaction.commandName === 'remind') {
+        const user = interaction.options.getUser('target');
+		client.users.send(user,'reset router, check vpn, kick people from internet, put cat outside, lock door, prepare tea, check gametime');
+           
+	}*/
 
 	try {
 		await command.execute(interaction);
