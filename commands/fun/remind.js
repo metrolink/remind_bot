@@ -9,8 +9,9 @@ module.exports = { data : new SlashCommandBuilder()
 			.setRequired(true)),
     async execute(interaction) {
         const user = interaction.options.getUser('target');
-            interaction.client.users.send(user,'reset router, check vpn, kick people from internet, put cat outside, lock door, prepare tea, check gametime');
-            await interaction.reply({ content: 'you sent a message!', ephemeral: true })
+        await interaction.reply({ content: 'you sent a message!', ephemeral: true })    
+        await interaction.client.users.send(user,'reset router, check vpn, kick people from internet, put cat outside, lock door, prepare tea, check gametime');
+            
         //await interaction.reply('this is a test')
 
     },
